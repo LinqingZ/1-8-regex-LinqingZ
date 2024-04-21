@@ -1,58 +1,67 @@
-const helloWorldRegex = (str) => {};
-
-// Q2
+const helloWorldRegex = (str) => {
+  return /Hello world/i.test(str);
+};
+//Q2
 const hasAVowel = (str) => {
   return /[aeiou]/gi.test(str);
 };
-
-const hasCatsOrDogs = (str) => {};
-
-// Q4
+//Q3
+const hasCatsOrDogs = (str) => {
+  return /cats|dogs/ig.test(str);
+};
+//Q4
 const hasVowelStart = (str) => {
   return /^[aeiou]/i.test(str);
 };
-
-
-const hasPunctuationEnd = (str) => {};
-
-// Q6
+//Q5
+const hasPunctuationEnd = (str) => {
+  return /[!|.|?]$/g.test(str);
+};
+//Q6
 const hasNothingOrDigits = (str) => {
   // return /^$|^\d+$/.test(str);
   return /^(|\d+)$/.test(str);
 };
-
-const hasNoFlippers = (str) => {};
-
-// Q8
+//Q7
+const hasNoFlippers = (str) => {
+  return !/[BCcDEHIKOoXxl]/g.test(str);
+};
+//Q8
 const isValidEmail = (str) => {
   // only letter a-z, numbers (0-9), and periods(.) are allowed in email
   return /^[\w\.]+@[\w\.]+\.[a-z]{2,4}$/i.test(str);
 };
-
-const isValidPhoneNumber = (str) => {};
-
-// Q10
+//Q9
+const isValidPhoneNumber = (str) => {
+  return /^[+]?[(]?[0-9]{3}[)]?[-\s.]+[0-9]{3}[-\s.]+[0-9]{4}$/.test(str);
+};
+//Q10
 const matchAllNumbers = (str) => {
   return str.match(/\d+/g) || [];
 };
-
-const matchAllNumbersAsNumbers = (str) => {};
-
-// Q12
+//Q11
+const matchAllNumbersAsNumbers = (str) => {
+  const arr = str.match(/\d+/g);
+  if (arr === null) return [];
+  return arr.map(Number);
+};
+//Q12
 const matchAllWords = (str) => {
   // return str.match(/\b\w+\b/g) || []; // wrong
   return str.match(/[a-zA-Z']+/g) || [];
 };
-
-const replaceAllNumbers = (str) => {};
-
+//Q13
+const replaceAllNumbers = (str) => {
+  return str.replaceAll(/[0-9]+/g, "???");
+};
 // Q14
 const fixFileName = (str) => {
   return str.replace(/\s+/g, "_")
 };
-
-const nameRedacter = (str) => {};
-
+//Q15
+const nameRedacter = (str) => {
+  return str.replaceAll(/[A-Z]{2,}/g, "REDACTED");
+};
 // Q16
 const camelToSnakeCase = (str) => {
   // return str.replace(/([A-Z])/g, match => `_${match.toLowerCase()}`); // best way
