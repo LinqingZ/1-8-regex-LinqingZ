@@ -17,7 +17,7 @@ const hasPunctuationEnd = (str) => {
 const hasNothingOrDigits = (str) => { };
 
 const hasNoFlippers = (str) => {
-  return /[^\s*$BCcDEHIKOoXxl]/g.test(str);
+  return !/[BCcDEHIKOoXxl]/g.test(str);
 };
 
 const isValidEmail = (str) => { };
@@ -37,7 +37,7 @@ const matchAllNumbersAsNumbers = (str) => {
 const matchAllWords = (str) => { };
 
 const replaceAllNumbers = (str) => {
-  return str.replaceAll(/[^0]\d\w/g, "???");
+  return str.replaceAll(/[0-9]+/g, "???");
 };
 
 const fixFileName = (str) => { };
